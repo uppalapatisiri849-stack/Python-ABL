@@ -1,0 +1,90 @@
+Case Study 1: Traffic Violation Penalty Calculator
+1. Problem Statement
+Calculate fines for multiple traffic violations using vehicle category, offence type, and repeat-offence status. Identify whether disqualification review is needed.
+
+2. Objectives
+•	Read multiple violation records.
+•	Apply sample fines and the repeat-offence rule.
+•	Calculate the total penalty and review status.
+
+3. Assumptions
+•	Sample fines: helmet = ₹500, signal = ₹1000, speeding = ₹1500.
+•	A repeat offence doubles its fine.
+•	Three or more violations require disqualification review.
+
+4. Algorithm
+1. Start.
+2. Read the number of violations.
+3. For each violation, read vehicle, offence and repeat status; calculate its fine.
+4. Add each fine to the total.
+5. If violations are 3 or more, show review required; otherwise show no review flag.
+6. Display total and stop.
+
+5. Flowchart
+Oval = Start/End; Parallelogram = Input/Output; Rectangle = Process; Diamond = Decision.
+OVAL: START
+↓
+IO: Input number of violations
+↓
+RECT: Set total = 0
+↓
+DIAMOND: Repeat offence?
+↓
+RECT: Calculate fine and add to total
+↓
+DIAMOND: Violations >= 3?
+↓
+IO: Display total and status
+↓
+OVAL: END
+
+
+ 
+6.  Pseudocode
+START
+INPUT n
+total = 0
+REPEAT n times:
+  INPUT vehicle, offence, repeat
+  Set fine using the fine table
+  IF repeat = yes: fine = fine * 2
+  total = total + fine
+IF n >= 3: print review required
+ELSE: print no review flag
+PRINT total
+STOP
+
+7.Python Source Code
+fines = {"helmet": 500, "signal": 1000, "speeding": 1500}
+n = int(input("Number of violations: "))
+total = 0
+
+for i in range(n):
+    vehicle = input("Vehicle: ")
+    offence = input("Offence: ").lower()
+    repeat = input("Repeat? yes/no: ").lower()
+    fine = fines[offence]
+    if repeat == "yes":
+        fine = fine * 2
+    total = total + fine
+    print(vehicle, "fine =", fine)
+
+print("Total penalty:", total)
+if n >= 3:
+    print("Review required")
+else:
+    print("No review flag")
+
+8. Test Cases (2)
+Test Case Input	Expected Result
+2 violations: car, helmet, no; bike, speeding, yes	Total penalty: 3500; No review flag
+3 violations: car, signal, no; bike, helmet, yes; car, speeding, no	Total penalty: 3500; Review required
+
+9.  Output
+Total penalty: 3500
+No review flag
+
+10. Conclusion
+The program uses a dictionary, loop and conditions to calculate fines and review status.
+
+
