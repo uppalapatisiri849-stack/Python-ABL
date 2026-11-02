@@ -1,0 +1,104 @@
+5. ATM Transaction Sequence Simulation
+
+1. Problem Statement
+Simulate a series of deposits and withdrawals, update an account balance, reject invalid or unaffordable withdrawals,
+and summarize accepted and rejected transactions.
+
+2. Objectives
+•	Update balance after each transaction.
+•	Reject invalid amounts and withdrawals exceeding balance.
+•	Report final balance and transaction counts.
+
+3. Assumptions
+•	Opening balance is ₹5,000.
+•	Transactions are tuples of type and amount.
+•	Withdrawal limit per transaction is ₹3,000.
+•	Amounts must be positive.
+
+4. Algorithm
+1. Set the opening balance and counters.
+2. Process each transaction tuple.
+3. Accept deposits with positive amounts.
+4. Accept withdrawals only if within limit and balance.
+5. Print each decision and final summary.
+
+5. Flowchart
+        (START)
+           |
+     Set Opening Balance
+           |
+    Enter Transaction
+           |
+     Amount Valid?
+       /       \
+     Yes        No
+      |          |
+  Deposit or   Reject
+  Withdrawal  Transaction
+      |
+  Update Balance
+      |
+ More Transactions?
+     /       \
+   Yes        No
+    |          |
+ Repeat     Print Balance
+Transaction  and Summary
+               |
+             (STOP)
+
+pesudocode 
+START
+
+Set balance
+
+Read amount
+
+IF amount > 0
+    Update balance
+ELSE
+    Print "Invalid Amount"
+END IF
+
+Print balance
+
+STOP
+
+7. BEGIN
+
+INPUT monthly usage
+CALCULATE cost for Plan A and Plan B
+IF usage <= 100, Plan A costs 200
+ELSE add excess usage charges
+IF usage <= 200, Plan B costs 300
+ELSE add excess usage charges
+COMPARE plan costs
+DISPLAY the cheapest plan
+END
+
+Python Source Code
+
+u = int(input("Enter monthly usage in units: "))
+a = 200 if u <= 100 else 200 + (u-100)*2
+b = 300 if u <= 200 else 300 + (u-200)*1
+print("Plan A:", a, "Plan B:", b)
+print("Best Plan:", "A" if a <= b else "B")
+
+8. Test Cases
+Input:
+Enter monthly usage in units: 80
+Output:
+Plan A: 200
+Plan B: 300
+Best Plan: A
+Input:
+Enter monthly usage in units: 250
+
+Output:
+Plan A: 500
+Plan B: 350
+Best Plan: B
+
+10. Conclusion
+The simulation tracks the account balance accurately and rejects transactions that violate the amount, balance, or withdrawal-limit rules.
+
