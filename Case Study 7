@@ -1,0 +1,67 @@
+7. Student Performance Trend Analysis
+
+1. Problem Statement
+Compare student scores across three assessments, calculate changes,
+identify subjects consistently below a defined threshold, and classify the overall trend.
+
+2. Objectives
+•	Calculate improvement or decline between assessments.
+•	Identify consistently weak subjects.
+•	Classify performance using average marks.
+
+3. Assumptions
+•	Scores are out of 100.
+•	The dataset contains three assessments per subject.
+•	A subject is consistently weak if all three scores are below 40.
+•	Average ≥ 75 is High, ≥ 50 is Moderate, otherwise Needs Improvement.
+
+4. Algorithm
+1. Store subject scores as nested lists.
+2. Calculate change from first to last assessment.
+3. Check for consistently weak subjects.
+4. Calculate overall average and classify.
+5. Print a summary.
+
+5. Flowchart
+       (START)
+          |
+    Enter Subject Marks
+          |
+  Calculate Score Changes
+          |
+   Check Marks < 40
+          |
+  Calculate Average
+          |
+  Check Performance
+          |
+  Print Result and Weak Subjects
+          |
+        (STOP)
+
+6. Pseudocode
+BEGIN
+INPUT product price and quantity
+CALCULATE total amount
+IF total >= 1000, APPLY 10% discount
+LIMIT discount to 200
+ADD 5% tax
+DISPLAY final bill
+END
+7. Python Source Code
+ p = float(input("Enter product price: "))
+q = int(input("Enter quantity: "))
+total = p * q
+discount = min(total * 0.10, 200) if total >= 1000 else 0
+bill = (total - discount) * 1.05
+print("Total Bill:", round(bill, 2))
+8. Test Cases
+Input:
+Price: 200
+Quantity: 22
+Output:
+Total Bill: 420.0
+
+10. Conclusion
+The analysis identifies score trends and consistently weak subjects and classifies overall performance using clear thresholds.
+ 
