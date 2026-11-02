@@ -1,0 +1,84 @@
+10. Food Waste Monitoring System
+
+1. Problem Statement
+Compare meals prepared, meals served, and leftovers over several days. Calculate waste percentages
+and identify days where waste exceeds an acceptable threshold.
+
+2. Objectives
+•	Calculate leftover meals and waste percentage.
+•	Compare daily waste against a threshold.
+•	Summarize total waste over the period.
+
+3. Assumptions
+•	Meals prepared and served are non-negative integers.
+•	Leftovers = prepared − served.
+•	Waste percentage = leftovers / prepared × 100.
+•	A day is flagged if waste percentage exceeds 10%; prepared meals must be greater than zero.
+
+4. Algorithm
+1. Store daily prepared and served counts in a list of tuples.
+2. Calculate leftovers and percentage for each day.
+3. Flag waste percentages above 10%.
+4. Sum total prepared, served, and leftover meals.
+5. Print daily and overall results.
+
+5.Flowchart
+       (START)
+          |
+    Enter Meal Details
+          |
+      Check Data
+          |
+   Calculate Food Waste
+          |
+   Calculate Percentage
+          |
+     Waste > 10%?
+       /      \
+     Yes       No
+      |         |
+   Show Alert   No Alert
+       \       /
+    Update Daily Totals
+          |
+    Print Summary
+          |
+        (STOP)
+
+6. Pseudocode
+BEGIN
+INPUT venue, equipment, catering, transport and certificate costs
+INPUT sponsorship and participant contribution
+CALCULATE total cost
+CALCULATE shortfall after sponsorship
+CALCULATE minimum participants needed
+DISPLAY total cost and shortfall
+END
+7. Python Source Code
+v = float(input("Venue cost: "))
+e = float(input("Equipment cost: "))
+c = float(input("Catering cost: "))
+t = float(input("Transport cost: "))
+s = float(input("Sponsorship: "))
+fee = float(input("Contribution per participant: "))
+total = v + e + c + t
+shortfall = max(0, total - s)
+print("Total Cost:", total)
+print("Shortfall:", shortfall)
+print("Participants Needed:", int(shortfall / fee) + (shortfall % fee > 0))
+8. Test Cases
+Input:
+Venue: 5000
+Equipment: 2000
+Catering: 3000
+Transport: 1000
+Sponsorship: 5000
+Contribution: 100
+Output:
+Total Cost: 11000.0
+Shortfall: 6000.0
+Participants Needed: 60
+9. Output
+ 
+10. Conclusion
+The program calculates daily and overall food waste, flags high-waste days, and provides figures that can support better meal planning.
