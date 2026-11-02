@@ -1,0 +1,83 @@
+2. Employee Payroll and Deduction Analysis
+
+1. Problem Statement
+Create a payroll program that calculates gross salary from basic pay, allowances, overtime, and incentives, 
+applies a simple deduction policy, and prints a salary statement.
+
+2. Objectives
+•	Compute gross earnings.
+•	Apply deductions using conditions.
+•	Display gross pay, deductions, and net pay.
+
+3. Assumptions
+•	Basic pay, allowances, overtime pay, and incentives are non-negative.
+•	Gross salary is their sum.
+•	Deduction is 5% of gross up to ₹30,000; above ₹30,000, deduction is 8% of gross.
+
+4. Algorithm
+1. Read salary components.
+2. Validate that values are non-negative.
+3. Add components to calculate gross pay.
+4. Choose the deduction rate based on gross pay.
+5. Subtract deduction and print the salary statement.
+
+5. Flowchart
+       (START)
+          |
+     Enter Salary
+          |
+  Calculate Gross Salary
+          |
+   Gross > 30000?
+      /       \
+    Yes        No
+     |          |
+  8% Deduction  5% Deduction
+      \        /
+   Calculate Net Salary
+          |
+  Print Salary Statement
+          |
+        (STOP)
+
+6. Pseudocode
+
+    BEGIN
+INPUT units and previous bill
+IF units <= 100, bill = units * 2
+ELSE IF units <= 200, bill = 200 + (units-100)*3
+ELSE, bill = 500 + (units-200)*5
+ADD fixed charge and surcharge
+IF bill > 1000, APPLY rebate
+DISPLAY current bill
+COMPARE with previous bill
+DISPLAY unusual increase if bill > 1.5 * previous bill
+END
+
+7. Python Source Code
+
+u = int(input("Enter units: "))
+p = float(input("Enter previous bill: "))
+b = u*2 if u <= 100 else 200+(u-100)*3 if u <= 200 else 500+(u-200)*5
+b += 50 + (b+50)*0.05 - (50 if b+50 > 1000 else 0)
+print("Bill:", round(b, 2), "Unusual Increase" if b > 1.5*p else "Normal Bill")
+
+8. Test Cases
+
+   Input:
+Enter units: 80
+Enter previous bill: 200
+
+Output:
+Bill: 220.5 Normal Bill
+
+Input:
+Enter units: 250
+Enter previous bill: 800
+
+Output:
+Bill: 1312.5 Unusual Increase
+
+10. Conclusion
+The payroll program calculates earnings and applies the stated deduction bands to obtain net salary.
+Case 
