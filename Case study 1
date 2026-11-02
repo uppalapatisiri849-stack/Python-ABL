@@ -1,0 +1,84 @@
+1. Progressive Electricity Billing
+1. Problem Statement
+Develop a program that calculates a household electricity bill using progressive consumption slabs, a fixed charge,
+a surcharge, and a rebate. It should also compare the current bill with the previous bill and flag an unusual increase.
+
+2. Objectives
+•	Calculate energy charges using progressive slabs.
+•	Add a fixed charge and apply a surcharge/rebate rule.
+•	Compare bills and flag a significant increase.
+
+3. Assumptions
+•	Units are non-negative whole numbers.
+•	Rates: first 100 units ₹1.50/unit; next 100 ₹2.50/unit; units above 200 ₹4.00/unit.
+•	Fixed charge is ₹50. A 5% surcharge applies when consumption exceeds 250 units; otherwise no surcharge.
+•	An unusual increase means the current bill is more than 25% above the previous bill.
+
+4. Algorithm
+1. Read current and previous units.
+2. Calculate slab-wise energy charges.
+3. Add fixed charge and apply the surcharge condition.
+4. Calculate the previous bill using the same rules.
+5. Compare bills and print the result.
+
+5. Flowchart
+       (START)
+          |
+   Read Meter Readings
+          |
+   Calculate Units
+          |
+   Calculate Bill
+          |
+   Add Fixed Charges
+          |
+    Units > 250?
+      /      \
+    Yes       No
+     |         |
+ Add 5%     No Surcharge
+ Surcharge      |
+      \        /
+   Calculate Previous Bill
+          |
+   Compare Both Bills
+          |
+   Display Bill and Alert
+          |
+        (STOP)
+
+6. Pseudocode
+
+name = input("Enter student name: ")
+marks = float(input("Enter aggregate marks: "))
+subject = float(input("Enter minimum subject score: "))
+attendance = float(input("Enter attendance percentage: "))
+income = float(input("Enter family annual income: "))
+
+if marks >= 75 and subject >= 40 and attendance >= 75 and income <= 200000:
+    print("Student is Eligible for Scholarship")
+    print("Student Name:", name)
+    print("Aggregate Marks:", marks)
+else:
+    print("Student is Not Eligible for Scholarship")
+
+7. Python Source Code
+
+marks = float(input("Enter aggregate marks: "))
+subject = float(input("Enter subject score: "))
+attendance = float(input("Enter attendance: "))
+income = float(input("Enter family income: "))
+
+if marks >= 75 and subject >= 40 and attendance >= 75 and income <= 200000:
+    print("Scholarship Eligible")
+else:
+    print("Scholarship Not Eligible")
+
+8. Test Cases
+
+Aggregate Marks	Subject Score	Attendance (%)	Family Income (₹)	Expected Output
+85	60	90	150000	Scholarship Eligible
+65	50	85	100000	Scholarship Not Eligible
+
+
+
