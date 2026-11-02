@@ -1,0 +1,81 @@
+9. Student Marks Matrix Analysis
+
+1. Problem Statement
+Analyse a nested list of student marks across subjects. Calculate each student's total and average,
+calculate subject averages, identify the top performer, and flag subjects with low averages.
+
+2. Objectives
+•	Use a nested list to represent a marks matrix.
+•	Calculate row-wise and column-wise statistics.
+•	Identify top performer and low-average subjects.
+
+3. Assumptions
+•	Rows represent students and columns represent Python, Maths, and English.
+•	Each mark is between 0 and 100.
+•	A subject average below 50 is considered low.
+
+4. Algorithm
+1. Create the marks matrix and student/subject labels.
+2. Calculate each student's total and average.
+3. Calculate each subject's average.
+4. Identify the student with the highest total.
+5. List subjects with average below 50.
+
+5. Flowchart
+       (START)
+          |
+    Enter Student Marks
+          |
+   Calculate Total and Average
+          |
+   Calculate Subject Average
+          |
+   Find Highest Total
+          |
+   Check Average < 50
+          |
+    Print Analysis Report
+          |
+        (STOP)
+
+6. Pseudocode
+BEGIN
+INPUT expense in foreign currency
+INPUT exchange rate and conversion fee
+CONVERT expense into local currency
+ADD conversion fee
+COMPARE total expense with budget
+DISPLAY largest expense category
+END
+
+7. Python Source Code
+amount = float(input("Enter foreign expense: "))
+rate = float(input("Enter exchange rate: "))
+fee = float(input("Enter conversion fee: "))
+budget = float(input("Enter budget: "))
+total = amount * rate + fee
+print("Total Expense:", total)
+print("Within Budget" if total <= budget else "Over Budget")
+
+8. Test Cases
+Input:
+Foreign expense: 100
+Exchange rate: 80
+Fee: 50
+Budget: 10000
+Output:
+Total Expense: 8050.0
+Within Budget
+Input:
+Foreign expense: 150
+Exchange rate: 80
+Fee: 100
+Budget: 10000
+Output:
+Total Expense: 12100.0
+Over Budget
+
+10. Conclusion
+The marks matrix demonstrates nested-list processing, row and column calculations, and identification of the highest-performing student.
+
+ 
