@@ -1,0 +1,79 @@
+4. Examination Result and Grace-Mark Validation
+
+1. Problem Statement
+Process marks in multiple subjects, check subject-wise pass criteria, apply a limited grace-mark policy,
+and generate a final result without exceeding maximum marks.
+
+2. Objectives
+•	Check each subject against the pass mark.
+•	Use grace marks only within the stated limit.
+•	Calculate total, percentage, and final status.
+
+3. Assumptions
+•	Marks are out of 100 and the pass mark is 40 per subject.
+•	At most 3 grace marks may be added to one subject that is short by no more than 3 marks.
+•	Final marks cannot exceed 100.
+
+4. Algorithm
+1. Store subject marks in a dictionary.
+2. For each subject, if marks are 37–39, add enough grace marks to reach 40, within the 3-mark limit.
+3. Check whether all subjects pass.
+4. Calculate total and percentage and display the result.
+
+5. Flowchart
+        (START)
+           |
+     Enter Subject Marks
+           |
+     Validate Marks
+           |
+    Marks 37 to 39?
+       /       \
+     Yes        No
+      |          |
+  Give Grace   No Change
+    Marks         |
+       \         /
+    Check All Subjects
+        Passed?
+           |
+    Calculate Total
+     and Percentage
+           |
+     Print Final Result
+           |
+         (STOP)
+
+6. Pseudocode
+ BEGIN
+INPUT basic salary, allowances, overtime, incentives
+CALCULATE gross salary
+IF gross salary <= 20000, deduction = 5%
+ELSE deduction = 10%
+CALCULATE net salary
+DISPLAY gross salary, deduction and net salary
+END
+
+7. Python Source Code
+ b = float(input("Basic salary: "))
+a = float(input("Allowances: "))
+o = float(input("Overtime: "))
+i = float(input("Incentives: "))
+g = b + a + o + i
+d = g * 0.05 if g <= 20000 else g * 0.10
+print("Gross:", g, "Deduction:", d, "Net Salary:", g-d)
+
+8. Test Cases
+Input:
+Basic salary: 15000
+Allowances: 2000
+Overtime: 1000
+Incentives: 500
+Output:
+Gross: 18500.0
+Deduction: 925.0
+Net Salary: 17575.0
+
+10. Conclusion
+The program validates marks, applies the defined grace rule, and determines the result using subject-wise pass conditions.
+ 
