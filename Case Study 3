@@ -1,0 +1,91 @@
+3. Retail Billing with Discount Rules
+
+1. Problem Statement
+Develop an itemized retail bill for multiple products. Apply a discount when the pre-tax subtotal reaches a threshold,
+limit the discount to a maximum concession, and calculate tax on the discounted amount.
+
+2. Objectives
+•	Calculate line totals and subtotal.
+•	Apply threshold-based discount with a cap.
+•	Calculate tax and final invoice amount.
+
+3. Assumptions
+•	The example uses three products with quantity and unit price.
+•	A 10% discount applies when subtotal is at least ₹1,000; maximum discount is ₹150.
+•	Tax is 5% of the subtotal after discount.
+
+4. Algorithm
+1. Store product names, prices, and quantities in a list.
+2. Calculate each line total and subtotal.
+3. Apply discount condition and maximum cap.
+4. Calculate tax and final total.
+5. Print the itemized invoice.
+
+5. Flowchart
+        (START)
+           |
+     Enter Product Details
+           |
+    Calculate Total Amount
+           |
+     Subtotal >= 1000?
+        /       \
+      Yes        No
+       |          |
+ Apply 10%     No Discount
+ Discount         |
+       \         /
+     Calculate 5% Tax
+           |
+     Calculate Final Bill
+           |
+       Print Bill
+           |
+         (STOP)
+
+6. Pseudocode
+
+BEGIN
+INPUT consultation, diagnosis, treatment charges
+CALCULATE total bill
+IF total bill > 5000, apply 10% concession
+CALCULATE final bill
+IF final bill <= 3000, classify as Low
+ELSE IF final bill <= 7000, classify as Medium
+ELSE classify as High
+DISPLAY final bill and classification
+END
+
+7. Python Source Code
+
+c = float(input("Consultation charge: "))
+d = float(input("Diagnostic charge: "))
+t = float(input("Treatment charge: "))
+b = c + d + t
+if b > 5000: b *= 0.90
+print("Final Bill:", b)
+print("Category:", "Low" if b <= 3000 else "Medium" if b <= 7000 else "High")
+
+8. Test Cases
+
+Input:
+Consultation: 500
+Diagnostic: 1000
+Treatment: 1000
+Output:
+Final Bill: 2500.0
+Category: Low
+
+Input:
+Consultation: 1000
+Diagnostic: 2000
+Treatment: 3000
+Output:
+Final Bill: 5400.0
+Category: Medium
+
+10. Conclusion
+
+The invoice program demonstrates lists, loops, arithmetic, conditional discounts, and a capped concession before tax.
+
+ 
