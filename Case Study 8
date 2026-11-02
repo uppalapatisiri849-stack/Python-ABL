@@ -1,0 +1,90 @@
+8. Password Policy Validation Engine
+
+1. Problem Statement
+Validate sample passwords against minimum length, uppercase, lowercase, digit, special-character, repeated-character
+, and prohibited-substring rules. Report each failed rule.
+
+2. Objectives
+•	Check password length and character categories.
+•	Detect repeated consecutive characters.
+•	Report all failed policy conditions.
+
+3. Assumptions
+•	Minimum length is 8 characters.
+•	Password must contain uppercase, lowercase, digit, and one of !, @, #, $.
+•	Three identical consecutive characters are prohibited.
+•	The substring 'password' is prohibited regardless of letter case.
+
+4. Algorithm
+1. Read a sample password.
+2. Check each required condition.
+3. Check for three consecutive identical characters.
+4. Check prohibited substring case-insensitively.
+5. Print failures or valid status.
+
+5. Flowchart
+       (START)
+          |
+     Enter Password
+          |
+    Check Password
+          |
+   Check Repeated Letters
+          |
+   Check Prohibited Words
+          |
+     Find Errors
+          |
+   Print Password Status
+          |
+        (STOP)
+
+6. Pseudocode
+BEGIN
+INPUT material, labour, machine cost
+INPUT wastage percentage and selling price
+CALCULATE total production cost including wastage
+CALCULATE profit
+IF profit >= target, DISPLAY target achieved
+ELSE DISPLAY target not achieved
+DISPLAY cost and profit
+END
+
+7. Python Source Code
+m = float(input("Material cost: "))
+l = float(input("Labour cost: "))
+mc = float(input("Machine cost: "))
+w = float(input("Wastage percentage: "))
+s = float(input("Selling price: "))
+cost = (m + l + mc) * (1 + w / 100)
+profit = s - cost
+print("Total Cost:", round(cost, 2))
+print("Profit:", round(profit, 2))
+print("Target Achieved" if profit >= 500 else "Target Not Achieved")
+
+8. Test Cases
+Input:
+Material: 500
+Labour: 200
+Machine: 1005
+Wastage: 10
+Selling price: 1500
+Output:
+Total Cost: 880.0
+Profit: 620.0
+Target Achieved
+Input:
+Material: 600
+Labour: 300
+Machine: 200
+Wastage: 10
+Selling price: 1200
+Output:
+Total Cost: 1210.0
+Profit: -10.0
+Target Not Achieved
+
+10. Conclusion
+The validator checks multiple independent rules and reports specific failures, making the result more useful than a simple valid/invalid response.
+
+
