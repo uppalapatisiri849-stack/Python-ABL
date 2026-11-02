@@ -1,0 +1,77 @@
+6. Warehouse Inventory Reconciliation
+
+1. Problem Statement
+Compare opening stock, received stock, dispatched stock, and physically counted closing stock for several products. 
+Detect discrepancies and calculate replenishment needed to reach a target stock.
+
+2. Objectives
+•	Calculate expected closing stock.
+•	Compare expected and physical stock.
+•	Calculate discrepancies and target replenishment
+.
+3. Assumptions
+•	Expected stock = opening + received − dispatched.
+•	A negative expected stock is invalid.
+•	Target stock is 20 units for each product.
+•	Discrepancy = physical closing − expected closing.
+
+4. Algorithm
+1. Store each product record as a tuple.
+2. Calculate expected closing quantity.
+3. Compare with physical closing quantity.
+4. Calculate replenishment to target if stock is below target.
+5. Display reconciliation results.
+
+5. Flowchart
+       (START)
+          |
+   Enter Stock Details
+          |
+   Calculate Expected Stock
+          |
+   Compare Stock
+          |
+   Find Stock Difference
+          |
+   Calculate Replenishment
+          |
+   Print Stock Report
+          |
+        (STOP)
+
+. Pseudocode
+BEGIN
+INPUT distance, age, class, cancellation
+CALCULATE fare based on distance
+ADD reservation fee
+IF age >= 60, APPLY 20% concession
+IF cancellation = yes, ADD cancellation penalty
+DISPLAY final fare
+END
+
+7. Python Source Code
+d = int(input("Enter distance: "))
+age = int(input("Enter age: "))
+c = input("Enter class (A/B): ").upper()
+fare = d * (3 if c == "A" else 2)
+if age >= 60:
+    fare *= 0.8
+fare += 50
+if input("Cancel ticket? (yes/no): ").lower() == "yes":
+    fare += 100
+print("Final Fare:", round(fare, 2))
+
+8. Test Cases
+Input:
+Distance: 100
+Age: 30
+Class: B
+Cancel ticket? no
+Output:
+Final Fare: 250.0
+Input:
+
+10. Conclusion
+The program uses tuples and arithmetic to reconcile stock records, identify mismatches, and calculate replenishment requirements.
+
+ 
